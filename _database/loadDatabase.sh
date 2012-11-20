@@ -1,6 +1,6 @@
-sqlite3 AuctionBase < drop.sql;
-sqlite3 AuctionBase < constraints_create.sql;
-sqlite3 AuctionBase < load.sql;
+sqlite3 auctionbase_data < drop.sql;
+sqlite3 auctionbase_data < constraints_create.sql;
+sqlite3 auctionbase_data < load.sql;
 sh loadTriggers.sh
-sqlite3 AuctionBase < constraints_verify.sql;
+sqlite3 auctionbase_data < constraints_verify.sql;
 
