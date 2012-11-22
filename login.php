@@ -1,24 +1,25 @@
 <?php
-include('./dbHelper.php');
-session_start();
-if($_SERVER['REQUEST_METHOD'] == 'POST')
-{
-	$userName = addslashes($_POST['username']);
-	$password = addslashes($_POST['password']);
-
-	$rowArray = dbSimpleQueryRowArray("*", "UserLogin", "UserID = \"".$userName."\" and Password = \"".$password."\"");
-	$rowCount = count($rowArray);
-	if($rowCount == 1)
-	{
-		logUserIn($userName);
-	}else{
-		echo " The username or password is invalid";
-	}
-}
-
-function logUserIn($userName)
-{
-	$_SESSION['login_user'] = $userName;
-	header('Location: userHome.php');
-}
+	include_once('_Controller/checkLogin.php');
 ?>
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>LogIn SignUp</title>
+</head>
+
+<body>
+  <?php 
+  	correctHeader();
+  ?> 
+
+<h1> Submit and Log in</h1>
+<form action="_Controller/loginScript.php" method="post">
+    <input type="text" name="username" value="decolon" />
+    <input type="password" name="password" value="decolon"/>
+    <input type="submit" value="Submit" />
+</form>
+
+
+</body>
+</html>

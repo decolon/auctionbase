@@ -1,3 +1,6 @@
+<?php
+	include_once('_Controller/checkLogin.php');
+?>
 <!doctype html>
 <html>
 <head>
@@ -6,8 +9,9 @@
 </head>
 
 <body>
-
-<?php include('privatePanel.php');?>
+  <?php 
+  	correctHeader();
+  ?> 
 <h1> Favorites</h1>
 
 </body>

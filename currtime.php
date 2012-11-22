@@ -1,6 +1,5 @@
 <?php # currtime.php - show current time
-  
-  include ('sqlitedb.php');
+  include_once('_Controller/checkLogin.php');
 ?>
 
 <html>
@@ -9,8 +8,8 @@
 </head>
 
 <?php 
-  include ('navbar.html');
-?>
+ correctHeader();
+?> 
 
 <center>
 <h3> Current Time </h3> 
@@ -28,8 +27,6 @@
   
   $db = null;
 ?>
-<a href="index.php">Home</a>
-
 </center>
 </html>
 
