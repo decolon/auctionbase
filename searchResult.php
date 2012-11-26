@@ -1,6 +1,14 @@
 <?php
+/*
+searchResult.php
+----------------------------------------------------------------
+This file gives a list view of all the items which satisfy a searchs 
+criteria
+
+TO DO implement it
+*/
 	include_once('_Controller/checkLogin.php');
-	include_once('_Controller/searchScript.php')
+	include_once('_Controller/itemScript.php')
 ?>
 <!doctype html>
 <html>
@@ -13,18 +21,20 @@
 <?php 
 	correctHeader();
 ?> 
+<h1> SEARCH RESULT PAGE </h1>
 <ul>
 <?php 
-$text = $_GET['text'];
-$results = getItemsWithText($text, 20, 1);
-foreach($results as $r){
+	if(isset($_SESSION['results'])){
+		foreach($_SESSION['results'] as $r){
+			$itemID = $r;
+			$itemName = getNameWithID($itemID);
 ?>
-<li><?=$r['Name']?></li>
-<?php   } ?>
+		<li><a href="item.php?itemID=<?=$itemID?>"><?=htmlspecialchars($itemName)?></a></li>
+<?php
+		}			
+	}
+?>
 </ul>
-
-
-<h1> SEARCH RESULT PAGE </h1>
   
 </body>
 </html>

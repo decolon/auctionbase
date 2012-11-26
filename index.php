@@ -1,4 +1,9 @@
 <?php
+/*
+index.php
+------------------------------------------------------
+Home sweet home
+*/
 	include_once('_Controller/checkLogin.php');
 ?>
 <!doctype html>
@@ -14,10 +19,14 @@
 <body>
   <?php 
   	correctHeader();
+	if(isset($_SESSION['error'])){
+		echo '<h1>'. htmlspecialchars($_SESSION['error']).'</h1>';
+		$_SESSION['error'];	
+	}
   ?>  
   
   <form action="_Controller/searchPageRedirect.php" method="get">
-      <input type="button" value="A"/>
+  	<a href = "advancedSearch.php">Advanced</a>
       <input type="text" id="search" name="search" spellcheck="true" placeholder="Search"/>
       <input type="submit"/>
   </form> 

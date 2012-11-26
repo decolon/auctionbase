@@ -1,4 +1,10 @@
-<?php # currtime.php - show current time
+<?php 
+/*
+selectTime.php
+-------------------------------------------------------------------
+This file lets an admin select the time for the auctionbase universe
+
+*/
   include_once('_Controller/checkLogin.php');
   include_once('_Controller/timeScript.php');
 ?>
@@ -18,6 +24,8 @@
   <?php 
     include_once ('timetable.html');
   ?>
+  	<label for="realTime">Real Time?</label>
+  	<input type="checkbox" id="realTime" name="realTime" value="realTime"/>
   </form>
     
 </center>

@@ -11,6 +11,11 @@ include_once(__DIR__.'/timeScript.php');
     if($_POST["MM"]) {
       $selectedtime = $yyyy."-".$MM."-".$dd." ".$HH.":".$mm.":".$ss;
       setCurrentTime($selectedtime);
+	  if($_POST['realTime']){
+			startRealTime();  
+	  }else{
+			endRealTime();
+	  }
 	  header("Location: ../currtime.php");
    }
 ?>

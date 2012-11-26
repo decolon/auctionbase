@@ -1,10 +1,10 @@
-/*$(document).ready(function(){
-	$.get('_Controller/autocompleteFill.php', function(data) {
-	  alert(data);
-	});
-});*/
-
-
+/*
+searchAutocomplete.js
+--------------------------------------------------------------------------------
+This file is the script that enables the autocomplete capabilities of the 
+search bar on the home page.  It gets suggestions from the database and then
+feeds them into the autocomplete jquery ui function.  
+*/
 $(function() {
 	var test = ["TEST"];
         $( "#search" ).autocomplete({

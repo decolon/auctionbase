@@ -1,4 +1,12 @@
-<?php include_once('_Controller/checkLogin.php'); ?>
+<?php 
+/*
+userHome.php
+----------------------------------------------------------
+this file tells a user they are logged in
+
+TO DO get rid of and replace with profile.php
+*/
+include_once('_Controller/checkLogin.php'); ?>
 <!doctype html>
 <html>
 <head>
